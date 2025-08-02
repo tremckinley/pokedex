@@ -30,7 +30,7 @@ export class Cache {
     #reap(): void {
         for (const entry of this.#cache.keys()) {
             const cacheEntry = this.#cache.get(entry);
-            if (cacheEntry && cacheEntry.createdAt < Date.now() - this.#interval) {
+            if (!entry.includes("/pokemon/") && cacheEntry && cacheEntry.createdAt < Date.now() - this.#interval) {
                 this.#cache.delete(entry)
             }
         }
