@@ -149,10 +149,18 @@ export type Pokemon = {
   order: number,
   height: number,
   weight: number,
-  types: {slot: number, 
+  types: {
+    slot: number, 
     type: {
       name: string
     }
   }[],
-  base_experience: number
+  base_experience: number,
+  stats: {
+    base_stat: number,
+    stat: {
+      name: string
+    }
+  }[]
+
 }
